@@ -18,7 +18,7 @@ const getMin = (arr) => {
 
 // todo 编写选择排序函数
 const slectionSort = (arr) => {
-    const len=arr.length
+    const len = arr.length
     const newArr = [];
     let smallest;
     for (let i = 0; i < len; i++) {
@@ -59,3 +59,81 @@ console.log(slectionSort(arr));
 
 
 
+
+
+/* // 数组find方法
+const people = [
+    {
+        name: "Matt",
+        age: 27
+    },
+    {
+        name: "Nicholas",
+        age: 29
+    }
+];
+const res = people.find((item, index, arr) => item.age < 28)
+
+console.log(res);
+
+
+
+let values = [0, 1, 5, 10, 15];
+values.sort((a, b) => {
+    return a - b
+});
+console.log(values);
+
+let numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+let someResult = numbers.some((item, index, array) => item > 2);
+console.log(someResult) // true
+
+
+const str = 'qwe'
+console.log(str.padStart(5, '|'));
+
+let text = "cat, bat, sat, fat";
+let pattern = /.at/g;
+console.log(text.match(pattern));
+
+let strText = "cd,at, sat, fat";
+let pos = strText.search(/at/);
+console.log(pos) */
+
+let text = "cat, bat, sat, fat";
+let result = text.replace(/at/g, "ond");
+console.log(result); // "cond, bat, sat, fat"
+
+let pattern = /.(at)/;
+console.log(pattern.exec(text));
+console.log(text.match(pattern));
+
+
+var obj = {
+    id: 1,
+    name: "章三",
+    msg: {
+        age: 18,
+    },
+    arr: [1, 2, 3, 5, 6]
+};
+
+
+
+const o = {}
+const deepcopy = (newObj, oldObj) => {
+    for (k in oldObj) {
+        item = oldObj[k];
+        if (item instanceof Array) {
+            newObj[k] = [];
+            deepcopy(newObj[k], item);
+        } else if (item instanceof Object) {
+            newObj[k] = {};
+            deepcopy(newObj[k], item);
+        } else {
+            newObj[k] = item
+        }
+    }
+    return newObj
+}
+console.log(deepcopy(obj, o));
