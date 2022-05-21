@@ -100,15 +100,15 @@ let strText = "cd,at, sat, fat";
 let pos = strText.search(/at/);
 console.log(pos) */
 
-let text = "cat, bat, sat, fat";
+/* let text = "cat, bat, sat, fat";
 let result = text.replace(/at/g, "ond");
 console.log(result); // "cond, bat, sat, fat"
 
 let pattern = /.(at)/;
 console.log(pattern.exec(text));
 console.log(text.match(pattern));
-
-
+ */
+console.log('-------------------------------------------------');
 var obj = {
     id: 1,
     name: "章三",
@@ -137,3 +137,55 @@ const deepcopy = (newObj, oldObj) => {
     return newObj
 }
 console.log(deepcopy(obj, o));
+
+
+
+
+const testArr = [{
+    uname: 'zdy'
+}, 2, 3, 4, 5, 6, 7, 8, 9];
+const x = testArr.slice(0)
+console.log(x);
+x[0].uname = 9
+console.log(x);
+console.log(testArr);
+console.log(x === testArr);
+
+
+
+
+
+
+const o1 = {
+    uname: 'zdy',
+    age: 18,
+    arr: [1, 2, 3, 5, 6,]
+}
+
+
+/* for (let k in o1) {
+    if (!o2.hasOwnProperty(k)) {
+        o2[k] = o1[k]
+    }
+} */
+// 深拷贝
+const o2 = JSON.parse(JSON.stringify(o1));
+
+
+console.log(o2);
+console.log(o1);
+(o2.arr)[0] = 9
+console.log(o1);
+console.log(o1.arr === o2.arr);
+
+/* 
+const _ = require('lodash');
+const obj1 = {
+    a: 1,
+    b: { f: { g: 1 } },
+    c: [1, 2, 3]
+};
+const obj2 = _.cloneDeep(obj1);
+console.log(obj1.b.f === obj2.b.f);// false */
+const y = [123, 2, 7]
+console.log(getType(y));
